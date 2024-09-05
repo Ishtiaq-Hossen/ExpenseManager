@@ -1,0 +1,1 @@
+enum Catagory{food,travel,leisure,work}
