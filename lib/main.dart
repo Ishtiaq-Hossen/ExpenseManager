@@ -1,5 +1,11 @@
+import 'package:expensemanager/screens/expense_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp();
+  runApp(MaterialApp(
+    theme: ThemeData(
+      useMaterial3: true
+    ),
+    home: ExpenseScreen(),
+  ));
 }
