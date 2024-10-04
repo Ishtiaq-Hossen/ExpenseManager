@@ -1,4 +1,5 @@
 
+import 'package:expensemanager/screens/new_expense.dart';
 import 'package:flutter/material.dart';
 
 import '../enums/catagory_enums.dart';
@@ -26,7 +27,10 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
 
   ];
   void _openAddExpenseModal(){
-    showModalBottomSheet(context: context, builder: (ctx)=>Text('Modal Bottom Sheet'));
+    showModalBottomSheet(
+        context: context,
+        builder: (ctx)=>NewExpense()
+    );
   }
   @override
   Widget build(BuildContext context) {
