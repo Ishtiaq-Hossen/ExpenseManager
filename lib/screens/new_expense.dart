@@ -7,7 +7,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NewExpense extends StatefulWidget {
-  const NewExpense({super.key});
+  final void Function(Expense expense) onAddExpense;
+
+  const NewExpense({super.key, required this.onAddExpense});
 
   @override
   State<NewExpense> createState() => _NewExpenseState();
@@ -43,6 +45,7 @@ class _NewExpenseState extends State<NewExpense> {
      final enterAmount = double.tryParse(
          _amountController.text); //1.12=> 1.12 ,"Hello"=> null
      final amountIsInvalid = enterAmount == null || enterAmount <= 0;
+     //input validation
      if (_titleController.text
          .trim()
          .isEmpty || amountIsInvalid || _selectedDate == null) {
@@ -65,6 +68,15 @@ class _NewExpenseState extends State<NewExpense> {
        );
        return;
      }
+     widget.onAddExpense(
+       Expense(
+       title: _titleController.text,
+       amount: enterAmount,
+       date: _selectedDate!,
+       catagory: _selectedCatagory
+       ),
+     );
+     Navigator.pop(context);
    }
    @override
   void dispose() {
