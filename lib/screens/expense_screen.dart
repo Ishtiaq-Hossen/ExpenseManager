@@ -16,6 +16,7 @@ class ExpenseScreen extends StatefulWidget {
 class _ExpenseScreenState extends State<ExpenseScreen> {
   //dummy data
   final List<Expense> _registeredExpenses=[
+    /*
     Expense(title: 'Flutter course',
         amount: 23,
         date: DateTime.now(),
@@ -24,17 +25,24 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
         amount: 25.99,
         date: DateTime.now(),
         catagory: Catagory.leisure),
-
+  */
   ];
   void _openAddExpenseModal(){
     showModalBottomSheet(
         context: context,
-        builder: (ctx)=>NewExpense()
+        builder: (ctx)=>NewExpense(onAddExpense: _addExpense)
     );
+  }
+  void _addExpense(Expense expense){
+    setState(() {
+      _registeredExpenses.add(expense);
+    });
+
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         title: Text('Expense Manager'),
         actions: [
