@@ -100,7 +100,10 @@ class _NewExpenseState extends State<NewExpense> {
                   label: Text('Title')
               )
             ),
+            const SizedBox(width: 16,),
             Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
                   child: TextField(
@@ -123,6 +126,7 @@ class _NewExpenseState extends State<NewExpense> {
                 )
               ],
             ),
+            const SizedBox(height: 16,),
             Row(
               children: [
                 //catagory dropdown
@@ -145,6 +149,7 @@ class _NewExpenseState extends State<NewExpense> {
                       });
                     }
                 ),
+                const Spacer(),
                 TextButton(
                     onPressed: (){
                       Navigator.pop(context);
