@@ -15,7 +15,7 @@ class ExpenseScreen extends StatefulWidget {
 
 class _ExpenseScreenState extends State<ExpenseScreen> {
   //dummy data
-  final List<Expense> _registeredExpenses=[
+  final List<Expense> _registeredExpenses=[ //list of expenses that will show in expanded widget
     /*
     Expense(title: 'Flutter course',
         amount: 23,
@@ -42,7 +42,7 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: Colors.indigoAccent,
       appBar: AppBar(
         title: Text('Expense Manager'),
         actions: [
