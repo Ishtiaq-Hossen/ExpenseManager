@@ -28,7 +28,9 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
   */
   ];
   void _openAddExpenseModal(){
+
     showModalBottomSheet(
+        isScrollControlled: true,
         context: context,
         builder: (ctx)=>NewExpense(onAddExpense: _addExpense)
     );
@@ -37,7 +39,11 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
     setState(() {
       _registeredExpenses.add(expense);
     });
-
+  }
+  void _removeExpense(Expense expense){
+    setState(() {
+      _registeredExpenses.add(expense);
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -55,6 +61,7 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
             Expanded(
               child: ExpenseList(
                 expenses: _registeredExpenses,
+                onRemoveExpense: _removeExpense,
               ),
             ),
           ],
