@@ -1,4 +1,8 @@
 
+import 'dart:ffi';
+
+import 'package:expensemanager/widgets/chart-bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../enums/catagory_enums.dart';
@@ -34,6 +38,8 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode= MediaQuery.of(context).platformBrightness==Brightness.dark;
+
     return Container(
       margin: EdgeInsets.all(16),//all mane sob dik theke
       padding: EdgeInsets.symmetric(// symetric mane upre,niche ba dane,bame
@@ -57,13 +63,40 @@ class Chart extends StatelessWidget {
       ),
       child: Column(
         children: [
+          //bar
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                for(final bucket in buckets)
+                  ChartBar(
+                    fill: bucket.TotalExpenses==0
+                        ?0
+                        :bucket.TotalExpenses /maxTotalExpense,
+                  ),
+              ],
+            ),
+          ),
+          
+
+          SizedBox(
+            height: 32,
+          ),
           Row(
-            children: buckets.map((bucket) => Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 4,
-              ),
-              child: Icon(CatagoryIcons[bucket.catagory]),
-              )).toList(),
+            children: buckets.map((bucket) => Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 4,
+                ),
+                child: Icon(
+                    CatagoryIcons[bucket.catagory],
+
+                    color:isDarkMode
+                        ? Theme.of(context).colorScheme.secondary
+                    : Theme.of(context).colorScheme.primary.withOpacity(0.7)
+                ),
+                ),
+            )).toList(),
           ),
         ],
 
