@@ -1,5 +1,6 @@
 
 import 'package:expensemanager/screens/new_expense.dart';
+import 'package:expensemanager/widgets/chart.dart';
 import 'package:flutter/material.dart';
 
 import '../enums/catagory_enums.dart';
@@ -72,9 +73,12 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
           IconButton(onPressed: _openAddExpenseModal, icon: Icon(Icons.add)),
         ],
       ),
+      //chart
+
       body: SafeArea(
         child: Column(
           children: [
+            Chart(expenses: _registeredExpenses),
             Expanded(
               child: ExpenseList(
                 expenses: _registeredExpenses,
