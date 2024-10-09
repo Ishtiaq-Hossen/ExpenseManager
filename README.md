@@ -1,16 +1,12 @@
-# expensemanager
 
-A new Flutter project.
+# Expense Manager
 
-## Getting Started
+Expense manager helps us to record our daily expenses in a customized ,efficient way .I develope this app with proper **adaptiveness** & **responsiveness**. This app will work on both **IOS** & **Android**. It's **Darkmode** feature is a plus.
 
-This project is a starting point for a Flutter application.
+App Video: [Youtube URL](https://www.youtube.com/watch?v=jErAEfA0xXw&ab_channel=SaregamaMusic)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
