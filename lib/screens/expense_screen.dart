@@ -1,6 +1,7 @@
 
 import 'package:expensemanager/screens/new_expense.dart';
 import 'package:expensemanager/widgets/chart.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../enums/catagory_enums.dart';
@@ -32,6 +33,7 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
 
     showModalBottomSheet(
         isScrollControlled: true,
+        useSafeArea: true,
         context: context,
         builder: (ctx)=>NewExpense(onAddExpense: _addExpense)
     );
@@ -65,6 +67,8 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    final width=MediaQuery.sizeOf(context).width;
+    print("Width is $width");
     return Scaffold(
       //backgroundColor: Colors.indigoAccent,
       appBar: AppBar(
@@ -75,7 +79,7 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
       ),
       //chart
 
-      body: SafeArea(
+      body: width<600? SafeArea(
         child: Column(
           children: [
             Chart(expenses: _registeredExpenses),
@@ -87,7 +91,20 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
             ),
           ],
         ),
-      ),
+      ): SafeArea(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(child: Chart(expenses: _registeredExpenses)),
+            Expanded(
+              child: ExpenseList(
+                expenses: _registeredExpenses,
+                onRemoveExpense: _removeExpense,
+              ),
+            ),
+          ],
+        ),
+      )
     );
   }
 }
