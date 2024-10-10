@@ -3,7 +3,7 @@
 
 Expense Manager is a simple yet powerful application that helps users track and manage their daily expenses. It is designed to be intuitive, customizable, and highly responsive, offering seamless functionality across both iOS and Android platforms. The app also comes with dark mode support, enhancing the user experience in low-light environments.
 
-Demo Video: [Youtube URL](https://www.youtube.com/watch?v=jErAEfA0xXw&ab_channel=SaregamaMusic)
+Demo Video: [Youtube URL](https://youtu.be/wd5_MN9mJ3Y)
 
 
 ## Screenshots
