@@ -6,7 +6,7 @@ Expense Manager is a simple yet powerful application that helps users track and 
 Demo Video: [Youtube URL](https://youtu.be/wd5_MN9mJ3Y)
 
 
-## Screenshots
+## Screenshots of the app
 
 ### Light Mode
 ![SS01](https://github.com/user-attachments/assets/6d56fc5b-d5c3-4dd3-bad0-5314ab46912e)
